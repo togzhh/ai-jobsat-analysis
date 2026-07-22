@@ -2,9 +2,6 @@
 # analysis.R
 # Does AI Tool Usage Relate to Developer Job Satisfaction?
 # Analysis of the 2025 Stack Overflow Developer Survey
-#
-# Input:  data/raw/so_survey_subset.csv
-# Output: data/processed/*.csv, figures/*.png, report/stats_results.txt
 # =============================================================================
 
 required_packages <- c("dplyr", "readr", "stringr", "forcats", "ggplot2", "rstatix", "coin", "car")
@@ -33,9 +30,7 @@ dir.create("report", recursive = TRUE, showWarnings = FALSE)
 raw <- read_csv("data/raw/so_survey_subset.csv", show_col_types = FALSE)
 cat("Raw rows read:", nrow(raw), "\n")
 
-# JobSat is only asked of professional developers (confirmed: 100% missing for
-# every other MainBranch category) -- restricting to this group isn't an
-# arbitrary choice, it matches the survey's own skip logic.
+# JobSat is only asked of professional developers (
 df <- raw %>% filter(MainBranch == "I am a developer by profession")
 cat("Rows after restricting to professional developers:", nrow(df), "\n")
 
@@ -51,8 +46,7 @@ ai_levels <- c(
 df <- df %>%
   mutate(AISelect = factor(AISelect, levels = ai_levels, ordered = TRUE))
 
-# Flag (not remove) implausible experience values (>60 years -- a handful of
-# joke/error entries, confirmed only 18/30 rows out of ~35k)
+# Flag (not remove) implausible experience values
 df <- df %>%
   mutate(
     WorkExp_extreme = !is.na(WorkExp) & WorkExp > 60,
@@ -104,9 +98,8 @@ cat("JobSat skew check -- mean:", round(mean(df_clean$JobSat), 2),
 # PART 3: STATISTICAL TEST
 # =============================================================================
 # JobSat is heavily left-skewed (median 8, long tail down toward 0), violating
-# the normal/equal-variance assumptions ANOVA needs -- same reasoning as the
-# DOAJ project's right-skewed turnaround time, just flipped direction. Using
-# Kruskal-Wallis + effect size for the same principled reason.
+# the normal/equal-variance assumptions ANOVA needs. Using
+# Kruskal-Wallis + effect size is a better approach.
 
 sink("report/stats_results.txt", split = TRUE)
 
@@ -130,7 +123,7 @@ sink()
 cat("\nStatistical test complete. Output in report/stats_results.txt\n")
 
 # =============================================================================
-# PART 4: CONFOUND CHECK -- does the (tiny) AI-usage effect hold across
+# PART 4: CONFOUND CHECK - does the (tiny) AI-usage effect hold across
 # experience levels, or is it just a proxy for seniority?
 # =============================================================================
 
@@ -160,7 +153,7 @@ print(band_summary, n = Inf)
 sink()
 
 # =============================================================================
-# PART 5: ROBUSTNESS CHECK -- MULTIVARIATE MODEL
+# PART 5: ROBUSTNESS CHECK 
 # =============================================================================
 # Does AI usage predict JobSat after controlling for experience, company
 # size, and remote-work setup simultaneously?
