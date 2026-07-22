@@ -87,8 +87,7 @@ substantially more.
 
 ## Reproducibility
 
-Open `ai-jobsat-analysis.Rproj` in RStudio (sets the working directory automatically —
-no `setwd()` needed), then run:
+Open `ai-jobsat-analysis.Rproj` in RStudio, then run:
 
 ```r
 source("analysis.R")
