@@ -1,13 +1,11 @@
 # Does AI Tool Usage Relate to Developer Job Satisfaction?
 
-## Motivation
-
-Public discourse about AI and developer wellbeing pulls in two opposite directions at
-once: AI tools are either framed as a productivity boost that makes work more enjoyable,
+Public discourse about AI and developer wellbeing pulls in two opposite directions:
+AI tools are either framed as a productivity boost that makes work more enjoyable,
 or as a source of frustration, distrust, and job-security anxiety. The 2025 Stack Overflow
-Developer Survey publishes detailed breakdowns of AI adoption and of job satisfaction
-separately, but never statistically connects the two. This project asks directly:
-**does how often a developer uses AI tools actually relate to how satisfied they are with
+Developer Survey publishes detailed breakdowns of AI adoption and of job satisfaction 
+separately. This project asks:
+**does how often a developer uses AI tools actually relate to how satisfied they are with 
 their job?**
 
 ## Research Question
@@ -86,33 +84,9 @@ controlling for experience, company size, and remote-work setup?
 
 **Headline finding**: contrary to public narratives claiming AI tools are either a major
 boost or a major drag on developer wellbeing, this data says usage frequency has close to
-no practical bearing on stated job satisfaction. Tenure and work setup matter
+no practical bearing on stated job satisfaction. Tenure and work setup matter 
 substantially more.
 
-## Report
-
-- **[`report/AI_JobSat_Report.pdf`](report/AI_JobSat_Report.pdf)** — full write-up with
-  methodology, results, discussion, and limitations.
-- **[`report/Executive_Summary.pdf`](report/Executive_Summary.pdf)** — 2-page summary.
-
-## Repository Structure
-
-```
-├── data/
-│   ├── raw/                       # DOAJ-style: untouched original subset export
-│   └── processed/                 # cleaned analysis dataset
-├── figures/                       # 2 exported plots (PNG)
-├── report/
-│   ├── stats_results.txt          # full printed output of all statistical tests
-│   ├── full_report.md             # source markdown for the full report
-│   ├── AI_JobSat_Report.pdf
-│   ├── executive_summary.md
-│   └── Executive_Summary.pdf
-├── analysis.R                     # full pipeline: clean -> EDA -> stats -> confound check -> robustness
-├── ai-jobsat-analysis.Rproj       # open this in RStudio -- sets working dir automatically
-├── README.md                      # this file
-└── LICENSE
-```
 
 ## Reproducibility
 
