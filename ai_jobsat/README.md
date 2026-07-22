@@ -61,8 +61,8 @@ controlling for experience, company size, and remote-work setup?
 
 **n = 24,918.** Job satisfaction is measured 0-10; median 8, mean 7.21.
 
-| Test | Result | Effect size | 
-|---|---|---|---|
+| Test | Result | Effect size |  
+|---|---|---|
 | Kruskal-Wallis, JobSat ~ AI usage | H=40.2, df=4, p=3.9×10⁻⁸ | ε²=0.00145 (small) | 
 
 - **Group medians barely move**: 7.11-7.29 mean JobSat across all five AI-usage
