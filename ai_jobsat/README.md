@@ -3,8 +3,8 @@
 Public discourse about AI and developer wellbeing pulls in two opposite directions:
 AI tools are either framed as a productivity boost that makes work more enjoyable,
 or as a source of frustration, distrust, and job-security anxiety. The 2025 Stack Overflow
-Developer Survey publishes detailed breakdowns of AI adoption and of job satisfaction 
-separately. This project asks:
+Developer Survey publishes detailed breakdowns of AI adoption and job satisfaction. 
+This project asks:
 **does how often a developer uses AI tools actually relate to how satisfied they are with 
 their job?**
 
@@ -31,16 +31,13 @@ controlling for experience, company size, and remote-work setup?
 ### Known limitations
 
 - **Cross-sectional, self-reported, single time point.** This cannot establish causality
-  in either direction — it's equally consistent with "AI usage changes satisfaction" and
+  in either direction, it's equally consistent with "AI usage changes satisfaction" and
   "already-satisfied developers are more inclined to adopt new tools."
 - **JobSat is a 0-10 self-rating**, not a validated psychometric wellbeing or burnout
   instrument. It measures stated job satisfaction, not mental health.
 - **Self-selection**: respondents are Stack Overflow's own user base, skewing toward
   professional, English-literate, internet-active developers rather than the full global
   developer population.
-- **A handful of implausible experience values** (18 respondents reporting >60 years of
-  work experience, 30 reporting >60 years of coding) are flagged, not silently removed,
-  and excluded from the confound/robustness models specifically.
 
 ## Methodology
 
@@ -100,9 +97,3 @@ source("analysis.R")
 Dependencies (`dplyr`, `readr`, `stringr`, `forcats`, `ggplot2`, `rstatix`, `coin`, `car`)
 are checked and installed automatically at the top of the script if missing.
 
-## License
-
-Code/report licensed under your choice (MIT is a common default). Survey data is licensed
-by Stack Overflow under the Open Database License (ODbL) — check
-[survey.stackoverflow.co](https://survey.stackoverflow.co/) before redistributing the raw
-export.
