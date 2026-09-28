@@ -79,20 +79,9 @@ controlling for experience, company size, and remote-work setup?
   0.0017 (AI usage alone) to 0.0182 (full model) — meaning the other predictors do almost
   all of the real explanatory work.
 
-**Headline finding**: contrary to public narratives claiming AI tools are either a major
+**Main finding**: contrary to public narratives claiming AI tools are either a major
 boost or a major drag on developer wellbeing, this data says usage frequency has close to
 no practical bearing on stated job satisfaction. Tenure and work setup matter 
 substantially more.
 
-
-## Reproducibility
-
-Open `ai-jobsat-analysis.Rproj` in RStudio, then run:
-
-```r
-source("analysis.R")
-```
-
-Dependencies (`dplyr`, `readr`, `stringr`, `forcats`, `ggplot2`, `rstatix`, `coin`, `car`)
-are checked and installed automatically at the top of the script if missing.
 
