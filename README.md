@@ -81,16 +81,3 @@ controlling for experience, company size, and remote-work setup?
 boost on developer wellbeing, this data says usage frequency has close to 
 no practical bearing on stated job satisfaction. Experience and remote work matter 
 substantially more.
-
-
-## Reproducibility
-
-Open `ai-jobsat-analysis.Rproj` in RStudio, then run:
-
-```r
-source("analysis.R")
-```
-
-Dependencies (`dplyr`, `readr`, `stringr`, `forcats`, `ggplot2`, `rstatix`, `coin`, `car`)
-are checked and installed automatically at the top of the script if missing.
-
